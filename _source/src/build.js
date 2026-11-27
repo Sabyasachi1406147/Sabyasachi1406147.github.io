@@ -1,5 +1,6 @@
 // Builds the static site into ../dist. Run: node src/build.js
 const fs = require('fs');
+const ASSET_V = require('crypto').createHash('sha1').update(require('fs').readFileSync(require('path').join(__dirname,'../static/assets/site.css'))).update(require('fs').readFileSync(require('path').join(__dirname,'../static/assets/site.js'))).digest('hex').slice(0,8);
 const path = require('path');
 const D = require('./data.js');
 const { SITE } = D;
@@ -100,7 +101,7 @@ function layout({ file, title, desc, header, body, extraHead = '', bodyClass = '
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Comic+Neue:wght@700&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=${ASSET_V}">
 <script>(function(){var t=null,m;try{m=/[?&]theme=(dark|light)/.exec(location.search);if(m)t=m[1]}catch(e){}if(!t){m=/sbtheme=(dark|light)/.exec(window.name||"");if(m)t=m[1]}if(!t){try{t=localStorage.getItem("sb-site-theme")}catch(e){}}if(!t){m=/(?:^|;\s*)sbtheme=(dark|light)/.exec(document.cookie||"");if(m)t=m[1]}document.documentElement.dataset.theme=t==="dark"?"dark":"light"})()</script>
 ${extraHead}</head>
 <body${bodyClass ? ` class="${bodyClass}"` : ''}>
@@ -135,7 +136,7 @@ ${body}
   </div>
   <div class="wrap foot-base"><p>© 2026 Sabyasachi Biswas. Last updated ${SITE.updated}.</p></div>
 </footer>
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v=${ASSET_V}" defer></script>
 </body>
 </html>
 `;
