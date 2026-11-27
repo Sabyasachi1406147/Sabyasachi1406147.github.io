@@ -374,7 +374,6 @@ const pages = {};
     "current": [
       {
         "id": "tg-plfnet",
-        "status": "Manuscript under review",
         "title": "TG-PLFNet: Interpretable RF Waveform Recognition",
         "description": "TG-PLFNet recognizes radar and communication waveforms directly from raw complex I/Q samples, without first turning them into spectrogram images. Its first layer is built from time-gated filters whose settings have a physical meaning, so we can read off where in time and frequency the network is looking.",
         "details": [["The problem", "Spectrum monitoring, cognitive radio, and electronic warfare systems must identify many kinds of RF emissions, from radar pulses to digital communication bursts, often at low signal-to-noise ratio. Classifiers that work on spectrogram images discard phase and fine timing, ordinary CNN filters say little about what the network has learned, and the useful information in short radar pulses sits in a small region of time and frequency."], ["Our approach", "The network’s first layer is built from learnable filters whose few parameters have a direct physical meaning, so after training each filter can be read as a region of the time–frequency plane. A complex-valued network then classifies the filter outputs. We evaluate it on a large set of radar and communication waveforms and on over-the-air recordings from software-defined radios."]],
@@ -386,7 +385,6 @@ const pages = {};
       },
       {
         "id": "beyond-fft",
-        "status": "Manuscript under review",
         "title": "Beyond FFT: High-Resolution Radar Frequency Estimation",
         "description": "HarmoniNet estimates frequencies from short, noisy radar measurements where conventional FFT peaks merge. In stretch-processed radar each scatterer becomes a tone whose frequency gives its range, so sharper frequency estimates mean sharper range profiles, and better separation of targets that sit close together.",
         "details": [["The problem", "The FFT is fast, but with only a few samples its resolution is fixed by the record length. Returns closer than one frequency bin merge into a single peak, and a weak return can hide in the sidelobes of a strong one. Subspace and sparse methods can do better, but they need the number of components in advance and cost far more computation."], ["Our approach", "HarmoniNet is a deep network that works directly on raw complex I/Q samples and reconstructs a dense, high-resolution spectrum, without being told how many returns are present. In our experiments it separates returns closer than the FFT’s resolution limit, holds up at low SNR, runs fast enough for real-time use, and gives clean range tracks on measured radar data."]],
