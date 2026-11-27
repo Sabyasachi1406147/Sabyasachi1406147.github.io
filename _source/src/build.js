@@ -207,6 +207,9 @@ const pages = {};
       <h1 id="h-name">Sabyasachi Biswas</h1>
       <p class="about-role">${SITE.role}<br><a href="https://www.gvsu.edu/engineering/">${SITE.org}</a></p>
       <p class="about-office">${SITE.office.join(', ')}</p>
+      <nav class="quick" aria-label="Quick links">
+        <a href="research.html">Research</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching</a><a href="awards.html">Awards</a>
+      </nav>
       <div class="bio">${D.BIO.map(p => `<p>${p}</p>`).join('')}</div>
     </section>
 
@@ -248,7 +251,7 @@ const pages = {};
   const byYear = {};
   D.NEWS.forEach(([d, t]) => { const y = (d.match(/\d{4}/) || ['Earlier'])[0]; (byYear[y] = byYear[y] || []).push([d, t]); });
   const body = `<section class="wrap block news-page">${Object.keys(byYear).sort((a, b) => b - a).map(y => `<section class="yr"><h2>${y}</h2><ul class="news">${byYear[y].map(([d, t]) => `<li><span class="nd">${d}</span><p>${t}</p></li>`).join('')}</ul></section>`).join('')}</section>`;
-  pages['news.html'] = layout({ file: 'news.html', title: 'News | Sabyasachi Biswas', desc: 'News from Sabyasachi Biswas: papers, awards, talks, students and service.', header: `<header class="wrap research-heading"><h1>News</h1></header>`, body });
+  pages['news.html'] = layout({ file: 'news.html', title: 'News | Sabyasachi Biswas', desc: 'News from Sabyasachi Biswas: papers, awards, talks, students and service.', header: `<header class="wrap research-heading page-head"><h1>News</h1><p class="page-lede">Papers, awards, students and service, newest first.</p></header>`, body });
 }
 
 // ---------------------------------------------------------------- research
@@ -659,10 +662,11 @@ const pages = {};
 // ---------------------------------------------------------------- publications
 {
   const sections = [
-    ['prep', 'Journal Manuscripts in Preparation'],
     ['journal', 'Journal Articles'],
     ['conference', 'Conference Papers'],
+    ['prep', 'Journal Manuscripts in Preparation'],
   ];
+  const nJ = D.PUBS.filter(p => p[0] === 'journal').length, nC = D.PUBS.filter(p => p[0] === 'conference').length;
   const entries = D.PUBS.map((paper, index) => ({ paper, tag: TAG[index] }));
   const body = `<div class="wrap block pubs">
   ${sections.map(([type, label]) => {
@@ -677,7 +681,7 @@ const pages = {};
   </section>`;
   }).join('\n  ')}
 </div>`;
-  pages['publications.html'] = layout({ file: 'publications.html', title: 'Publications | Sabyasachi Biswas', desc: `Journal articles and conference papers by Sabyasachi Biswas on radar signal processing, RF sensing, and interpretable deep learning.`, header: `<header class="wrap publications-title"><h1>Publications</h1></header>`, body, bodyClass: 'publications-page' });
+  pages['publications.html'] = layout({ file: 'publications.html', title: 'Publications | Sabyasachi Biswas', desc: `Journal articles and conference papers by Sabyasachi Biswas on radar signal processing, RF sensing, and interpretable deep learning.`, header: `<header class="wrap research-heading page-head publications-title"><h1>Publications</h1><p class="page-lede">${nJ} journal articles and ${nC} conference papers. My name is in bold; * marks equal contribution. Citations are on <a href="https://scholar.google.com/citations?user=SLDhricAAAAJ&hl=en">Google Scholar</a>.</p></header>`, body, bodyClass: 'publications-page' });
 }
 
 // ---------------------------------------------------------------- teaching and advising
@@ -709,7 +713,7 @@ const pages = {};
   <p class="sec-lede">I advise graduate students at GVSU and have mentored student researchers from high school to Ph.D. level at Mississippi State and NC State.</p>
   ${adviseTables}
 </section>`;
-  pages['teaching.html'] = layout({ file: 'teaching.html', title: 'Teaching and Advising | Sabyasachi Biswas', desc: 'Courses taught and students advised by Sabyasachi Biswas at Grand Valley State University, Mississippi State University, NC State, and Daffodil International University.', header: `<header class="wrap research-heading"><h1>Teaching and advising</h1></header>`, body });
+  pages['teaching.html'] = layout({ file: 'teaching.html', title: 'Teaching and Advising | Sabyasachi Biswas', desc: 'Courses taught and students advised by Sabyasachi Biswas at Grand Valley State University, Mississippi State University, NC State, and Daffodil International University.', header: `<header class="wrap research-heading page-head"><h1>Teaching and advising</h1><p class="page-lede">The courses I teach and the students I advise and mentor.</p></header>`, body });
   // old address keeps working
   pages['group.html'] = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Teaching and Advising | Sabyasachi Biswas</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=teaching.html#advising"><link rel="canonical" href="teaching.html#advising"></head><body><p><a href="teaching.html#advising">Teaching and advising</a></p></body></html>`;
 }
@@ -733,7 +737,7 @@ const pages = {};
   <h2 id="h-talklist">Talks, presentations and posters</h2>
   ${lists}
 </section>`;
-  pages['talks.html'] = layout({ file: 'talks.html', title: 'Talks | Sabyasachi Biswas', desc: 'Seminars, conference presentations, and research posters by Sabyasachi Biswas.', header: `<header class="wrap research-heading"><h1>Talks and posters</h1></header>`, body });
+  pages['talks.html'] = layout({ file: 'talks.html', title: 'Talks | Sabyasachi Biswas', desc: 'Seminars, conference presentations, and research posters by Sabyasachi Biswas.', header: `<header class="wrap research-heading page-head"><h1>Talks and posters</h1><p class="page-lede">Seminars, conference presentations and research posters.</p></header>`, body });
 }
 
 // ---------------------------------------------------------------- awards
@@ -776,7 +780,7 @@ const pages = {};
   <h2 id="h-awards">Honors and awards</h2>
   <ul class="aw-list">${items}</ul>
 </section>`;
-  pages['awards.html'] = layout({ file: 'awards.html', title: 'Awards | Sabyasachi Biswas', desc: 'Ph.D. milestone, honors, and awards of Sabyasachi Biswas.', header: `<header class="wrap research-heading"><h1>Awards</h1></header>`, body });
+  pages['awards.html'] = layout({ file: 'awards.html', title: 'Awards | Sabyasachi Biswas', desc: 'Ph.D. milestone, honors, and awards of Sabyasachi Biswas.', header: `<header class="wrap research-heading page-head"><h1>Awards</h1><p class="page-lede">Honors for research, teaching and robotics.</p></header>`, body });
 }
 
 // ---------------------------------------------------------------- CV
@@ -785,7 +789,7 @@ const pages = {};
   const body = `
 <section class="wrap block cv-top">
   <p class="sec-lede">The full CV, with grants and complete publication details, is ${hasCv ? `available as a <a href="${SITE.cvPdf}" target="_blank" rel="noopener">PDF</a>` : 'available on request'}. Publications are listed on <a href="publications.html">their own page</a>.</p>
-  ${hasCv ? `<p><a class="btn" href="${SITE.cvPdf}" target="_blank" rel="noopener">Download CV (PDF)</a></p>` : ''}
+  ${hasCv ? `<p><a class="btn solid" href="${SITE.cvPdf}" target="_blank" rel="noopener">Download CV (PDF)</a></p>` : ''}
 </section>
 <section class="wrap block split" aria-labelledby="h-exp">
   <h2 id="h-exp">Experience</h2>
@@ -811,7 +815,7 @@ const pages = {};
   <h2 id="h-mem">Memberships</h2>
   <ul class="chips">${D.MEMBERSHIPS.map(m => `<li>${m}</li>`).join('')}</ul>
 </section>`;
-  pages['cv.html'] = layout({ file: 'cv.html', title: 'CV | Sabyasachi Biswas', desc: 'Curriculum vitae of Sabyasachi Biswas: experience, education, honors, talks, and service.', header: `<header class="wrap research-heading"><h1>Curriculum vitae</h1></header>`, body });
+  pages['cv.html'] = layout({ file: 'cv.html', title: 'CV | Sabyasachi Biswas', desc: 'Curriculum vitae of Sabyasachi Biswas: experience, education, honors, talks, and service.', header: `<header class="wrap research-heading page-head"><h1>Curriculum vitae</h1><p class="page-lede">Experience, education, honors and service.</p></header>`, body });
 }
 
 // ---------------------------------------------------------------- personal (text kept from the original site)

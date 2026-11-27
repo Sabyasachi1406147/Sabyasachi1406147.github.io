@@ -740,3 +740,44 @@ html[data-site-theme=dark] .fam-text, html[data-site-theme=dark] .fam-sec h3, ht
 .vplay:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .vwrap.playing .vplay { opacity: 0; pointer-events: none; }
 @media (max-width: 600px) { .vplay { padding: 10px 16px 10px 12px; font-size: 15px; } .vplay svg { width: 24px; height: 24px; } }
+
+/* ---------- polish pass ---------- */
+/* page headers: title, one-line lede, rule */
+.page-head { padding-bottom: 18px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
+.page-head h1 { margin-bottom: 6px; }
+.page-lede { margin: 0; max-width: 70ch; font-size: 19px; line-height: 1.5; color: var(--soft); }
+.page-lede a { color: var(--link); }
+.publications-title { padding-top: clamp(28px, 4vw, 44px); }
+
+/* quick links under the home title */
+.quick { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 26px; }
+.quick a { font: 600 16px/1 var(--sans); padding: 10px 16px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); text-decoration: none; background: var(--paper); transition: border-color .15s ease, color .15s ease, background .15s ease; }
+.quick a:hover { border-color: var(--indigo); color: var(--indigo); background: var(--panel); }
+.quick a.quick-cv { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+.quick a.quick-cv:hover { filter: brightness(1.12); color: #fff; }
+.quick a:focus-visible { outline: 3px solid var(--indigo); outline-offset: 2px; }
+
+/* publication links as small chips */
+.lk a { display: inline-block; padding: 1px 9px; border: 1px solid var(--rule); border-radius: 4px; font-size: 13.5px; line-height: 1.7; text-decoration: none; color: var(--link); background: var(--paper); }
+.lk a:hover { border-color: var(--link); background: var(--panel); }
+.lk { gap: 6px 8px; }
+.pubs .refs li { padding-block: 14px; }
+.pubs .rc { font-size: 17px; }
+.pub-section + .pub-section { margin-top: 36px; }
+.pub-section h2 { font-size: 28px; margin-bottom: 6px; }
+
+/* talks: breathing room between title and first section */
+.talks-gallery-head, #h-posters { margin-top: 8px; }
+
+/* cards and media get a soft lift on hover only where clickable */
+.talk-ph a img, .aw-ph a img { transition: transform .2s ease, box-shadow .2s ease; }
+.talk-ph a:hover img, .aw-ph a:hover img { transform: translateY(-2px); box-shadow: 0 10px 24px -14px rgb(20 20 60 / .45); }
+@media (prefers-reduced-motion: reduce) { .talk-ph a img, .aw-ph a img { transition: none; } }
+
+/* dark-mode versions */
+html[data-site-theme=dark] .quick a { background: transparent; }
+html[data-site-theme=dark] .quick a.quick-cv { background: #4b40b8; border-color: #4b40b8; }
+html[data-site-theme=dark] .lk a { background: transparent; }
+@media (max-width: 860px) { .headshot { align-self: start; height: auto; } .headshot img { width: 100%; height: auto; } }
+.page-head { border-bottom: 0; padding-bottom: 4px; }
+.research-heading .page-lede, .page-head .page-lede { font-size: 19px; line-height: 1.5; color: var(--soft); margin: 0 0 6px; }
