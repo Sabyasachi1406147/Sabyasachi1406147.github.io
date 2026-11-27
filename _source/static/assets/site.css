@@ -781,3 +781,12 @@ html[data-site-theme=dark] .lk a { background: transparent; }
 @media (max-width: 860px) { .headshot { align-self: start; height: auto; } .headshot img { width: 100%; height: auto; } }
 .page-head { border-bottom: 0; padding-bottom: 4px; }
 .research-heading .page-lede, .page-head .page-lede { font-size: 19px; line-height: 1.5; color: var(--soft); margin: 0 0 6px; }
+
+/* The typed mission line and the scroll mouse are small, gentle motions, so they play
+   even when the operating system asks for reduced motion (Windows "Animation effects" off). */
+@media (prefers-reduced-motion: reduce) {
+  .cover-hero .caret { animation: blink 1s steps(1) infinite !important; }
+  .cover-hero .caret.done { animation: blink 1s steps(1) 4, fadeCaret .6s 4s forwards !important; }
+  .cover-hero .scroll-cue { opacity: 0; animation: cueIn .8s 3.6s forwards !important; }
+  .cover-hero .scroll-cue span { animation: wheel 1.6s ease-in-out infinite !important; }
+}

@@ -427,8 +427,9 @@
   }
 
   /* ---------- home: typed mission line ---------- */
+  /* runs even with Windows 'Animation effects' off: it is small text, not large motion */
   const typed = document.querySelector('.typed');
-  if (typed && !reduce) {
+  if (typed) {
     const span = typed.querySelector('.typed-text'), caret = typed.querySelector('.caret');
     const text = span.textContent; span.textContent = '';
     const shown = document.createElement('span'); shown.className = 'shown';
