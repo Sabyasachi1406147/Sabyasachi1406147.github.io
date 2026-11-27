@@ -25,7 +25,7 @@ const SITE = {
 const BIO = [
   'I am an Assistant Professor of Electrical and Computer Engineering at Grand Valley State University. I work on radar and RF signal processing and interpretable machine learning. My networks start from raw I/Q data and learn physically meaningful filters, so they are fast enough for real-time sensing and their decisions can be checked by an RF engineer.',
   'I earned my Ph.D. in Electrical and Computer Engineering at Mississippi State University in 2025, advised by <a href="https://ece.ncsu.edu/people/acgurbuz/">Dr. Ali C. Gurbuz</a> and <a href="https://www.ece.msstate.edu/people/faculty/dr-john-e-ball/">Dr. John E. Ball</a>, and stayed on as a postdoctoral research associate building multimodal threat-detection systems with radar, acoustic, LiDAR and camera sensors. Before that I developed head-tracking algorithms for immersive audio as a research co-op at Bose, worked on radio network coverage as an engineer at Banglalink, and taught at Daffodil International University after my B.Sc. at BUET.',
-  'My work appears in <i>IEEE Transactions on Radar Systems</i>, <i>IET Radar, Sonar &amp; Navigation</i>, <i>IEEE JSTARS</i>, <i>Manufacturing Letters</i>, the IEEE Radar Conference and the ICCV workshops, and has been supported through projects funded by NSF, AFRL, the U.S. Army ERDC and USDA.',
+  'My work appears in <i>IEEE Transactions on Radar Systems</i>, <i>IET Radar, Sonar &amp; Navigation</i>, <i>IEEE JSTARS</i>, <i>Manufacturing Letters</i>, the IEEE Radar Conference and the ICCV workshops, and has been supported through projects funded by NSF, the U.S. Army ERDC and USDA.',
 ];
 
 // Three research thrusts. "glyph" picks the small animated figure on the home page.
