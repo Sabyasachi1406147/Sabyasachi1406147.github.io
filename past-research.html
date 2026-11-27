@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Past Research | Sabyasachi Biswas</title>
+<meta name="description" content="Selected completed projects in radar signal processing, interpretable machine learning, and multimodal sensing.">
+<link rel="canonical" href="https://sabyasachi1406147.github.io/past-research.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Past Research | Sabyasachi Biswas">
+<meta property="og:description" content="Selected completed projects in radar signal processing, interpretable machine learning, and multimodal sensing.">
+<meta property="og:url" content="https://sabyasachi1406147.github.io/past-research.html">
+<meta name="theme-color" content="#16173a">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Comic+Neue:wght@700&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var t=null,m;try{m=/[?&]theme=(dark|light)/.exec(location.search);if(m)t=m[1]}catch(e){}if(!t){m=/sbtheme=(dark|light)/.exec(window.name||"");if(m)t=m[1]}if(!t){try{t=localStorage.getItem("sb-site-theme")}catch(e){}}if(!t){m=/(?:^|;s*)sbtheme=(dark|light)/.exec(document.cookie||"");if(m)t=m[1]}document.documentElement.dataset.theme=t==="dark"?"dark":"light"})()</script>
+</head>
+<body class="research-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="wordmark" href="index.html">Sabyasachi Biswas</a>
+    <nav aria-label="Main"><a href="research.html" aria-current="page">Research</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="teaching.html">Teaching and advising</a><a href="talks.html">Talks</a><a href="awards.html">Awards</a><a href="cv.html">CV</a><a href="personal.html">Me and my family</a></nav>
+    <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch between light and dark mode">
+      <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></g></svg>
+    </button>
+  </div>
+</header>
+<header class="wrap research-heading">
+    <h1>Research</h1>
+  </header>
+  <div class="research-tabs"><div class="wrap"><nav class="research-nav" aria-label="Research">
+    <a href="research.html">Current<span class="tab-long"> Research</span></a>
+    <a href="past-research.html" aria-current="page">Past<span class="tab-long"> Research</span></a>
+    <a href="collaborations.html">Collaborations</a>
+  </nav></div></div>
+<main id="main">
+<div class="wrap research-projects"><article class="research-project" aria-labelledby="learnable-filters">
+    <h2 id="learnable-filters">Learnable Filters for Raw RF Signals</h2>
+    
+    <p class="research-summary">CV-SincNet and PLFNets learn frequency-selective filters directly from complex radar and RF data. The learned center frequencies and bandwidths make it possible to see which spectral regions the models use for recognition.</p>
+    
+    
+    
+    <span class="lk"><a href="https://doi.org/10.1109/TRS.2023.3310894">CV-SincNet paper</a><a href="https://doi.org/10.1109/TRS.2024.3486183">PLFNets paper</a><a href="https://github.com/Sabyasachi1406147/PLFNets">PLFNets code</a></span>
+    <figure class="research-media">
+        <a href="assets/img/pub-plfnets.jpg"><img src="assets/img/pub-plfnets.jpg" alt="PLFNets architecture with a parameterized learnable filter layer followed by complex convolutional blocks." loading="lazy"></a>
+        <figcaption>The PLFNets architecture processes raw complex RF signals.</figcaption>
+      </figure>
+    
+  </article>
+<article class="research-project" aria-labelledby="hrspecnet">
+    <h2 id="hrspecnet">High-Resolution Micro-Doppler Reconstruction</h2>
+    
+    <p class="research-summary">HRSpecNet uses a denoiser, a learnable short-time Fourier transform, and a U-Net to reconstruct sharper micro-Doppler signatures from raw radar signals. The reconstructed signatures improved human activity recognition in our experiments.</p>
+    
+    
+    
+    <span class="lk"><a href="https://doi.org/10.1109/TRS.2024.3396172">Paper</a><a href="https://github.com/Sabyasachi1406147/HRSpecNet">Code</a></span>
+    <figure class="research-media">
+        <a href="assets/img/pub-hrspecnet.jpg"><img src="assets/img/pub-hrspecnet.jpg" alt="HRSpecNet architecture showing a denoiser, learnable STFT, and U-Net." loading="lazy"></a>
+        <figcaption>HRSpecNet reconstructs a micro-Doppler representation from a one-dimensional complex radar signal.</figcaption>
+      </figure>
+    
+  </article>
+<article class="research-project" aria-labelledby="radar-sign-language">
+    <h2 id="radar-sign-language">Sign Language Recognition with Radar and Video</h2>
+    
+    <p class="research-summary">Sign language carries meaning in hand shape, motion, and facial expression at once, and no single sensor captures all of it reliably. With Sultan Mohammad Manjur, I built a framework that fuses radar, RGB video, and skeletal keypoints to recognize isolated Italian Sign Language signs, and contributed to RF-ChessSIGN, a game played in real time with signs recognized by radar.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Automatic sign recognition could ease communication between Deaf and hearing people, but signs differ in subtle finger, hand, and body movements. Cameras give rich appearance but suffer under poor lighting, while radar is unaffected by light and protects privacy but sees no appearance detail.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>Each modality has its own model. For radar, we generate micro-Doppler signatures directly from range–Doppler maps for each of three receive antennas and classify them with a three-branch CNN that also learns from the differences and products of the antenna features. RGB video goes through a ResNet(2+1)D network, and 27 HRNet skeletal keypoints go through a multi-stream graph network (SL-GCN). A weighted late fusion combines the three predictions.</p>
+    </section></div>
+    <figure class="research-media">
+        <a href="assets/research/sign-language-streams.png"><img src="assets/research/sign-language-streams.png" alt="The three model streams: a three-branch relational CNN for radar micro-Doppler, a ResNet(2+1)D for video, and HRNet keypoints with SL-GCN for skeletons." loading="lazy"></a>
+        <figcaption><b>Figure.</b> The three streams that are fused. Top: the radar branch, which classifies micro-Doppler signatures from three antennas and their pairwise differences and products. Bottom: the ResNet(2+1)D video model and the skeleton model built on 27 HRNet keypoints and SL-GCN.</figcaption>
+      </figure>
+    <div class="research-points"><section>
+      <h3>What we found</h3>
+      <p>On the 1st Multimodal Isolated Italian Sign Language Recognition Challenge (126 signs), the radar branch alone reached about 93% accuracy, and fusing all three modalities reached 99.6% on the validation set and 99.7% on the test set. The team placed 2nd runner-up in the challenge, and the work appeared in the ICCV 2025 workshops alongside RF-ChessSIGN.</p>
+    </section></div>
+    <span class="lk"><a href="publications.html">ICCV 2025 workshop paper</a><a href="publications.html">RF-ChessSIGN</a><a href="https://www.kaggle.com/competitions/iccv-mslr-2025-track-2">Italian Sign Language Recognition challenge</a></span>
+    
+    
+  </article>
+<article class="research-project" aria-labelledby="asps">
+    <h2 id="asps">Angular Subspace Projection for Multi-Target Activity Recognition</h2>
+    
+    <p class="research-summary">When several people move in front of a radar at once, their micro-Doppler signatures overlap and a classifier trained on one person fails. With MIMO radar we separated the targets in the raw data itself, so each person can be classified as if they were alone.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Most radar classifiers assume a single target in the field of view. With several people, conventional processing adds their micro-Doppler signatures together, and separating them by tracking after range, Doppler, or angle processing is fragile when people are close together.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>Angular subspace projection (ASPS) uses the MIMO virtual array to project the raw radar data cube onto the angular sector of each detected target, producing one data cube per target (RDC-ω). Any representation, such as range–Doppler maps or micro-Doppler spectrograms, can then be computed for each person, and a multi-view deep neural network combines the projected views.</p>
+    </section></div>
+    <figure class="research-media wide">
+        <a href="assets/research/asps-overview.png"><img src="assets/research/asps-overview.png" alt="ASPS pipeline: target detection and angular projection, per-target micro-Doppler spectrograms and DNNs, and the projected spectrograms of three people moving at once." loading="lazy"></a>
+        <figcaption><b>Figure.</b> Left: targets are detected and their angles estimated, then the raw data cube is projected onto each target’s angle and classified separately. Right: three people active at once give one mixed micro-Doppler spectrogram, which ASPS separates into one spectrogram per person.</figcaption>
+      </figure>
+    <div class="research-points"><section>
+      <h3>What we found</h3>
+      <p>For nine activities performed by three people at the same time, the network reached 97.8% accuracy while being trained only on single-person data. Projection also improved recognition when targets were close together, including two-handed sign language and side-by-side activities. The work was published in IET Radar, Sonar &amp; Navigation (2023).</p>
+    </section></div>
+    <span class="lk"><a href="https://doi.org/10.1049/rsn2.12405">Paper</a></span>
+    
+    
+  </article></div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-name">Sabyasachi Biswas</p>
+      <p>Assistant Professor of Electrical and Computer Engineering<br>Grand Valley State University</p>
+    </div>
+    <div>
+      <p><a href="mailto:biswass@gvsu.edu">biswass@gvsu.edu</a></p>
+      <p>Room 247, John C. Kennedy Hall of Engineering<br>301 West Fulton Street<br>Grand Rapids, MI 49504</p>
+    </div>
+    <div>
+      <ul class="foot-links"><li><a href="https://scholar.google.com/citations?user=SLDhricAAAAJ&hl=en">Google Scholar</a></li><li><a href="https://github.com/Sabyasachi1406147">GitHub</a></li><li><a href="https://www.linkedin.com/in/sabyasachi-biswas-584589117/">LinkedIn</a></li><li><a href="https://www.webofscience.com/wos/author/record/JFA-3339-2023">Web of Science</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot-base"><p>© 2026 Sabyasachi Biswas. Last updated November 2026.</p></div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

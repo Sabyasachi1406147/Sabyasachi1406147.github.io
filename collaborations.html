@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collaborations | Sabyasachi Biswas</title>
+<meta name="description" content="Collaborative projects on bearing fault diagnosis and drone-based microwave radiometry.">
+<link rel="canonical" href="https://sabyasachi1406147.github.io/collaborations.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Collaborations | Sabyasachi Biswas">
+<meta property="og:description" content="Collaborative projects on bearing fault diagnosis and drone-based microwave radiometry.">
+<meta property="og:url" content="https://sabyasachi1406147.github.io/collaborations.html">
+<meta name="theme-color" content="#16173a">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Comic+Neue:wght@700&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var t=null,m;try{m=/[?&]theme=(dark|light)/.exec(location.search);if(m)t=m[1]}catch(e){}if(!t){m=/sbtheme=(dark|light)/.exec(window.name||"");if(m)t=m[1]}if(!t){try{t=localStorage.getItem("sb-site-theme")}catch(e){}}if(!t){m=/(?:^|;s*)sbtheme=(dark|light)/.exec(document.cookie||"");if(m)t=m[1]}document.documentElement.dataset.theme=t==="dark"?"dark":"light"})()</script>
+</head>
+<body class="research-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="wordmark" href="index.html">Sabyasachi Biswas</a>
+    <nav aria-label="Main"><a href="research.html" aria-current="page">Research</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="teaching.html">Teaching and advising</a><a href="talks.html">Talks</a><a href="awards.html">Awards</a><a href="cv.html">CV</a><a href="personal.html">Me and my family</a></nav>
+    <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch between light and dark mode">
+      <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></g></svg>
+    </button>
+  </div>
+</header>
+<header class="wrap research-heading">
+    <h1>Research</h1>
+  </header>
+  <div class="research-tabs"><div class="wrap"><nav class="research-nav" aria-label="Research">
+    <a href="research.html">Current<span class="tab-long"> Research</span></a>
+    <a href="past-research.html">Past<span class="tab-long"> Research</span></a>
+    <a href="collaborations.html" aria-current="page">Collaborations</a>
+  </nav></div></div>
+<main id="main">
+<div class="wrap research-projects"><p class="research-summary collab-intro">Projects with colleagues in mechanical engineering and remote sensing, where the signal processing and learnable-filter ideas from my radar work carry over to new problems.</p><article class="research-project plain-points" aria-labelledby="radiometer">
+    <h2 id="radiometer">Software-Defined Radio Radiometer on a Small Drone</h2>
+    
+    <p class="research-summary">With the University of Georgia, we built a low-cost, dual-polarized L-band microwave radiometer that flies on a small unmanned aircraft and maps surface brightness temperature at field scale, a key input for soil moisture estimation in precision agriculture.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Satellite L-band radiometers measure soil moisture, but at kilometer resolution, far too coarse for managing a single field. Airborne radiometers are expensive, and the protected 1400–1427 MHz band is increasingly affected by radio frequency interference (RFI).</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>The radiometer pairs horizontally and vertically polarized patch antennas with a software-defined radio receiver sampling at 30 MHz, all in a temperature-controlled enclosure under a custom octocopter. Because it records raw I/Q samples, we calibrate them to brightness temperature with internal and external references and use short-time Fourier and power spectral analysis to find and remove RFI from the instrument and from outside sources.</p>
+    </section></div>
+    <figure class="research-media">
+        <a href="assets/research/radiometer-figure.jpg"><img src="assets/research/radiometer-figure.jpg" alt="The radiometer on the octocopter and maps of measured brightness temperature over a field and a pond." loading="lazy"></a>
+        <figcaption><b>Figure.</b> Left: the radiometer flying under a custom octocopter, with the dual-polarized antenna tilted 45° toward the ground. Right: measured brightness temperature along the flight path for H-pol (a) and V-pol (b); the cold blue segment is over water.</figcaption>
+      </figure>
+    <div class="research-points"><section>
+      <h3>What we found</h3>
+      <p>Flights over bare soil and a pond produced high-resolution brightness temperature maps that clearly separate land from water. Sky and blackbody measurements showed standard deviations below 1 K for both polarizations. The work appeared in IEEE JSTARS (2024), with earlier results at IGARSS 2023 and the USNC-URSI Radio Science Meeting 2022.</p>
+    </section></div>
+    <span class="lk"><a href="https://doi.org/10.1109/JSTARS.2024.3394054">IEEE JSTARS 2024</a><a href="https://doi.org/10.1109/IGARSS52108.2023.10282140">IGARSS 2023</a></span>
+    
+    <figure class="research-media">
+        <video controls playsinline preload="metadata" data-playbtn poster="assets/research/radiometer-flight.jpg" aria-describedby="radiometer-video-caption">
+          <source src="assets/research/radiometer-flight.mp4" type="video/mp4">
+          <a href="assets/research/radiometer-flight.mp4">Download the video</a>
+        </video>
+        <figcaption id="radiometer-video-caption"><b>Video.</b> The measured H-pol and V-pol flight from the paper replayed point by point: the drone follows the recorded path, each footprint is colored by its brightness temperature, and the traces below show the drop from about 290 K over soil to about 220 K over water. Values are read from the published maps.</figcaption>
+      </figure>
+  </article>
+<article class="research-project plain-points" aria-labelledby="bearing-learnable-filters">
+    <h2 id="bearing-learnable-filters">Interpretable Bearing Fault Diagnosis with Learnable Filters</h2>
+    
+    <p class="research-summary">With Louisiana State University and Old Dominion University, we carried our learnable-filter idea from radar to machinery health monitoring: a CNN that diagnoses bearing faults directly from raw vibration data, with a first layer whose filters can be read as frequency bands.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Bearing faults are a leading cause of failure in rotating machines. Deep networks classify them well from vibration data, but their first-layer filters are hard to interpret and the models can be heavy for on-machine monitoring.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>The first layer of the CNN is a bank of parameterized learnable filters, Sinc or Gaussian band-pass filters, that operate on the raw vibration signal. Each filter learns only a center frequency and a bandwidth, so after training we can see which frequency bands the network uses to separate a healthy bearing from ball, inner-race, outer-race, and combined faults.</p>
+    </section></div>
+    <figure class="research-media small">
+        <a href="assets/research/bearing-setup.png"><img src="assets/research/bearing-setup.png" alt="Motor, shaft and two bearing housings, the parts of a rolling bearing, and the five bearing conditions studied." loading="lazy"></a>
+        <figcaption><b>Figure.</b> The test rig, the parts of a rolling bearing, and the five conditions: good bearing (GB), ball fault (BF), inner-race fault (IRF), outer-race fault (ORF), and combined fault (CF).</figcaption>
+      </figure>
+    <div class="research-points"><section>
+      <h3>What we found</h3>
+      <p>The learnable-filter CNNs reached up to 99.5% accuracy with far fewer parameters than a standard CNN, and their learned bands point to the resonances that fault impacts excite. The work was published in Manufacturing Letters (2025).</p>
+    </section></div>
+    <span class="lk"><a href="https://doi.org/10.1016/j.mfglet.2025.06.015">Paper</a></span>
+    
+    <figure class="research-media">
+        <video controls playsinline preload="metadata" data-playbtn poster="assets/research/bearing-filter-demo.jpg" aria-describedby="bearing-learnable-filters-video-caption">
+          <source src="assets/research/bearing-filter-demo.mp4" type="video/mp4">
+          <a href="assets/research/bearing-filter-demo.mp4">Download the video</a>
+        </video>
+        <figcaption id="bearing-learnable-filters-video-caption"><b>Video.</b> How a learnable Gaussian band-pass filter exposes an outer-race fault, shown on a simulated vibration signal. Each time a ball passes the defect it strikes the race and rings a structural resonance, but the impacts are buried in shaft vibration and noise. As the filter’s center frequency and bandwidth move onto the resonance band, the impacts stand out in the filtered signal and the envelope spectrum shows the fault frequency and its harmonics. This is an illustration of the mechanism computed in Python, not the trained network.</figcaption>
+      </figure>
+  </article>
+<article class="research-project plain-points" aria-labelledby="bearing-hr-spectrogram">
+    <h2 id="bearing-hr-spectrogram">High-Resolution Spectrograms for Robust Bearing Fault Diagnosis</h2>
+    
+    <p class="research-summary">A second study with the same team asks whether a sharper time–frequency picture makes fault diagnosis more reliable. We adapted deep learning-based high-resolution spectrogram reconstruction, first developed for radar micro-Doppler, to vibration signals.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Spectrograms trade time resolution for frequency resolution. Short windows blur closely spaced frequency components, and long windows smear the short impacts that bearing faults produce, which hurts diagnosis when operating conditions or noise levels change.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>A network learns to reconstruct a high-resolution spectrogram from a conventional one computed on the raw vibration signal, sharpening fault-related components in both time and frequency. A classifier then diagnoses the bearing condition from the reconstructed representation.</p>
+    </section></div>
+    <figure class="research-media">
+        <a href="assets/research/bearing-hr-spectrogram.png"><img src="assets/research/bearing-hr-spectrogram.png" alt="Proposed network: a 1D U-Net on the raw vibration signal, a multi-resolution convolutional STFT with three branches, and a 2D U-Net that outputs a high-resolution spectrogram." loading="lazy"></a>
+        <figcaption><b>Figure.</b> The proposed method. A 1D U-Net cleans the raw vibration signal, a multi-resolution convolutional STFT computes spectrograms with three window lengths, and a 2D U-Net fuses them into one high-resolution time–frequency representation.</figcaption>
+      </figure>
+    <div class="research-points"><section>
+      
+      <p>The work was published in Manufacturing Letters (2026), with Saifur Rahman Tushar, Md Ebtidaul Karim, Dr. Abdullah Al Mamun and Dr. Mahathir Mohammad Bappy.</p>
+    </section></div>
+    <span class="lk"><a href="https://doi.org/10.1016/j.mfglet.2026.07.019">Paper</a></span>
+    
+    
+  </article></div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-name">Sabyasachi Biswas</p>
+      <p>Assistant Professor of Electrical and Computer Engineering<br>Grand Valley State University</p>
+    </div>
+    <div>
+      <p><a href="mailto:biswass@gvsu.edu">biswass@gvsu.edu</a></p>
+      <p>Room 247, John C. Kennedy Hall of Engineering<br>301 West Fulton Street<br>Grand Rapids, MI 49504</p>
+    </div>
+    <div>
+      <ul class="foot-links"><li><a href="https://scholar.google.com/citations?user=SLDhricAAAAJ&hl=en">Google Scholar</a></li><li><a href="https://github.com/Sabyasachi1406147">GitHub</a></li><li><a href="https://www.linkedin.com/in/sabyasachi-biswas-584589117/">LinkedIn</a></li><li><a href="https://www.webofscience.com/wos/author/record/JFA-3339-2023">Web of Science</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot-base"><p>© 2026 Sabyasachi Biswas. Last updated November 2026.</p></div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

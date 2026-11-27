@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Current Research | Sabyasachi Biswas</title>
+<meta name="description" content="Current research on interpretable RF learning, high-resolution radar processing, and multimodal sensing.">
+<link rel="canonical" href="https://sabyasachi1406147.github.io/research.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Current Research | Sabyasachi Biswas">
+<meta property="og:description" content="Current research on interpretable RF learning, high-resolution radar processing, and multimodal sensing.">
+<meta property="og:url" content="https://sabyasachi1406147.github.io/research.html">
+<meta name="theme-color" content="#16173a">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Comic+Neue:wght@700&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var t=null,m;try{m=/[?&]theme=(dark|light)/.exec(location.search);if(m)t=m[1]}catch(e){}if(!t){m=/sbtheme=(dark|light)/.exec(window.name||"");if(m)t=m[1]}if(!t){try{t=localStorage.getItem("sb-site-theme")}catch(e){}}if(!t){m=/(?:^|;s*)sbtheme=(dark|light)/.exec(document.cookie||"");if(m)t=m[1]}document.documentElement.dataset.theme=t==="dark"?"dark":"light"})()</script>
+</head>
+<body class="research-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="wordmark" href="index.html">Sabyasachi Biswas</a>
+    <nav aria-label="Main"><a href="research.html" aria-current="page">Research</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="teaching.html">Teaching and advising</a><a href="talks.html">Talks</a><a href="awards.html">Awards</a><a href="cv.html">CV</a><a href="personal.html">Me and my family</a></nav>
+    <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch between light and dark mode">
+      <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></g></svg>
+    </button>
+  </div>
+</header>
+<header class="wrap research-heading">
+    <h1>Research</h1>
+  </header>
+  <div class="research-tabs"><div class="wrap"><nav class="research-nav" aria-label="Research">
+    <a href="research.html" aria-current="page">Current<span class="tab-long"> Research</span></a>
+    <a href="past-research.html">Past<span class="tab-long"> Research</span></a>
+    <a href="collaborations.html">Collaborations</a>
+  </nav></div></div>
+<main id="main">
+<div class="wrap research-projects">
+      <article class="research-project" aria-labelledby="tg-plfnet">
+    <h2 id="tg-plfnet">TG-PLFNet: Interpretable RF Waveform Recognition</h2>
+    <p class="research-status">Manuscript under review</p>
+    <p class="research-summary">TG-PLFNet recognizes radar and communication waveforms directly from raw complex I/Q samples, without first turning them into spectrogram images. Its first layer is built from time-gated filters whose settings have a physical meaning, so we can read off where in time and frequency the network is looking.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Spectrum monitoring, cognitive radio, and electronic warfare systems must identify many kinds of RF emissions, from radar pulses to digital communication bursts, often at low signal-to-noise ratio. Classifiers that work on spectrogram images discard phase and fine timing, ordinary CNN filters say little about what the network has learned, and the useful information in short radar pulses sits in a small region of time and frequency.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>The network’s first layer is built from learnable filters whose few parameters have a direct physical meaning, so after training each filter can be read as a region of the time–frequency plane. A complex-valued network then classifies the filter outputs. We evaluate it on a large set of radar and communication waveforms and on over-the-air recordings from software-defined radios.</p>
+    </section></div>
+    
+    
+    
+    
+    <figure class="research-media">
+        <video controls playsinline preload="metadata" data-playbtn poster="assets/research/tg-plfnet-lfm-explainer.jpg" aria-describedby="tg-plfnet-video-caption">
+          <source src="assets/research/tg-plfnet-lfm-explainer.mp4" type="video/mp4">
+          <a href="assets/research/tg-plfnet-lfm-explainer.mp4">Download the video</a>
+        </video>
+        <figcaption id="tg-plfnet-video-caption"><b>Video.</b> One learnable filter at work on a real linear FM chirp from our test set (SNR 10 dB). The filter narrows in on the pulse in time and in frequency until it isolates one time–frequency cell of the chirp (white box), and the trained model then classifies the waveform. Every curve is computed in Python on the recorded signal.</figcaption>
+      </figure>
+  </article>
+<article class="research-project" aria-labelledby="beyond-fft">
+    <h2 id="beyond-fft">Beyond FFT: High-Resolution Radar Frequency Estimation</h2>
+    <p class="research-status">Manuscript under review</p>
+    <p class="research-summary">HarmoniNet estimates frequencies from short, noisy radar measurements where conventional FFT peaks merge. In stretch-processed radar each scatterer becomes a tone whose frequency gives its range, so sharper frequency estimates mean sharper range profiles, and better separation of targets that sit close together.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>The FFT is fast, but with only a few samples its resolution is fixed by the record length. Returns closer than one frequency bin merge into a single peak, and a weak return can hide in the sidelobes of a strong one. Subspace and sparse methods can do better, but they need the number of components in advance and cost far more computation.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>HarmoniNet is a deep network that works directly on raw complex I/Q samples and reconstructs a dense, high-resolution spectrum, without being told how many returns are present. In our experiments it separates returns closer than the FFT’s resolution limit, holds up at low SNR, runs fast enough for real-time use, and gives clean range tracks on measured radar data.</p>
+    </section></div>
+    
+    
+    
+    
+    <figure class="research-media">
+        <video controls playsinline preload="metadata" data-playbtn poster="assets/research/harmoninet-aircraft.jpg" aria-describedby="beyond-fft-video-caption">
+          <source src="assets/research/harmoninet-aircraft.mp4" type="video/mp4">
+          <a href="assets/research/harmoninet-aircraft.mp4">Download the video</a>
+        </video>
+        <figcaption id="beyond-fft-video-caption"><b>Video.</b> A simulated aircraft made of 63 point scatterers (fuselage, swept wings, engines, tail, and fin) turns 360° in front of a radar with a 300 MHz chirp and a 25 m range window, sampled with 64 samples per pulse at 10 dB SNR. Each pulse’s range profile, from a Hamming-windowed FFT (gray) or the trained HarmoniNet model (blue), is stacked into a range–angle map, and filtered back-projection turns each map into an image. With the same pulses and the same noise, the HarmoniNet profiles give tighter spots on a cleaner background. At the end, cyan circles mark the true scatterer positions and the view zooms onto the left wing. The imaging step is a demonstration made for this video and is not part of the paper.</figcaption>
+      </figure>
+  </article>
+<article class="research-project" aria-labelledby="scorpion">
+    <h2 id="scorpion">Scorpion: Multimodal Sensing for Ground Robots</h2>
+    
+    <p class="research-summary">Scorpion is a U.S. Army ERDC project on multimodal ground robots for subterranean sensing. We use the Scorpion rover to study how complementary sensors can improve mapping and threat detection when visibility is limited or a single sensor gives an incomplete picture.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Caves, tunnels, and other underground spaces are often too dangerous to send people into, and they are hard to sense. Light ranges from bright to complete darkness, the air can be dusty or wet, line of sight breaks around corners, and walls create multipath reflections. Chemical and biological threats also vary in size, number, and signature, so no single sensor can reliably detect them all.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>We equip unmanned ground vehicles with complementary sensors: polarimetric and spectral cameras from ultraviolet to long-wave infrared, a 77 GHz millimeter-wave radar that records raw I/Q data for range, angle, and micro-Doppler, a multichannel acoustic array that locates sound sources, and LiDAR for mapping. Robots that mimic how biological threats move and sound let us run controlled lab experiments before field tests. We then compare what each sensor, and each combination, reveals, so we can recommend sensor suites for a given threat and power budget.</p>
+    </section></div>
+    <figure class="research-media">
+        <a href="assets/research/scorpion-thrust.png"><img src="assets/research/scorpion-thrust.png" alt="Center: robots detecting threats in a cave. Around it: LiDAR mapping, radar sensing, spectral and polarimetric imaging, and acoustic-array sensing pipelines." loading="lazy"></a>
+        <figcaption><b>Figure.</b> Subterranean multimodal sensing. Ground robots carry four sensing pipelines into cave-like environments: LiDAR mapping, millimeter-wave radar with micro-Doppler processing, spectral and polarimetric imaging from UV to LWIR, and an acoustic array for locating and classifying sound sources.</figcaption>
+      </figure>
+    <div class="research-points"><section>
+      <h3>Current progress</h3>
+      <p>Our platform is a Clearpath Husky rover carrying a 64-channel Ouster LiDAR, a TI AWR2243 millimeter-wave radar, a FLIR thermal camera, an Intel RealSense RGB-D camera, and a Sorama acoustic array. All sensors except the acoustic array run through ROS for synchronized, time-stamped recording and mapping, and the acoustic hotspots are aligned with the LiDAR map afterwards. The video below shows five synchronized views from one recording. In first fusion experiments, combining radar micro-Doppler spectrograms with thermal frames at the input classified eight human and vehicle classes with about 78% accuracy using a network of only about 111,000 parameters. Both results were presented at SPIE Autonomous Systems 2026.</p>
+    </section></div>
+    
+    
+    <figure class="research-media">
+        <video controls playsinline preload="metadata" data-playbtn poster="assets/research/scorpion-five-views.jpg" aria-describedby="scorpion-video-caption">
+          <source src="assets/research/scorpion-five-views.mp4" type="video/mp4">
+          <a href="assets/research/scorpion-five-views.mp4">Download the video</a>
+        </video>
+        <figcaption id="scorpion-video-caption"><b>Video.</b> Five synchronized views from the Scorpion rover: radar range–Doppler, micro-Doppler, RGB video, thermal imagery, and 3D LiDAR.</figcaption>
+      </figure>
+  </article>
+<article class="research-project" aria-labelledby="wifi-har">
+    <h2 id="wifi-har">Wi-Fi Sensing for Low-Cost Activity Monitoring at Home</h2>
+    
+    <p class="research-summary">Wi-Fi routers are already in almost every home. We study whether the channel state information (CSI) they produce can monitor daily activities, such as falls in older adults, without cameras or dedicated radar hardware.</p>
+    <div class="research-points"><section>
+      <h3>The problem</h3>
+      <p>Monitoring activity at home, for example to detect falls among older adults, should be private, inexpensive, and easy to install. Cameras raise privacy concerns and radar adds cost, while radar and Wi-Fi had not been compared under the same conditions.</p>
+    </section><section>
+      <h3>Our approach</h3>
+      <p>A Raspberry Pi 3B+ running Nexmon firmware captures Wi-Fi CSI while a phone generates traffic with the access point. A 77 GHz FMCW radar and a Kinect camera record the same scenes, so both sensors see identical activities. We turn both signals into micro-Doppler spectrograms, classify seven activities with CNNs, and release the datasets and code.</p>
+    </section></div>
+    <figure class="research-media">
+        <a href="assets/research/wifi-har-concept.jpg"><img src="assets/research/wifi-har-concept.jpg" alt="Concept of Wi-Fi sensing in a room and the experimental setup comparing Wi-Fi CSI and radar." loading="lazy"></a>
+        <figcaption><b>Figure.</b> Left: a Raspberry Pi captures CSI from ordinary Wi-Fi traffic in a room. Right: the matched Wi-Fi, radar and camera setup and the seven activities.</figcaption>
+      </figure>
+    <div class="research-points"><section>
+      <h3>What we found and next steps</h3>
+      <p>In matched experiments radar recognized the activities far more reliably, but Wi-Fi still detected them using hardware that costs a few dollars and is already in most homes. We also studied how robust Wi-Fi recognition is to changes in the setup. Ajaya Dahal, whose M.S. research I mentored, has since implemented the pipeline in real time on an AMD Versal FPGA. Next, we aim to close the accuracy gap with interpretable learnable filters on raw CSI, toward affordable in-home monitoring for healthy aging.</p>
+    </section></div>
+    <span class="lk"><a href="https://doi.org/10.1109/RadarConf2458775.2024.10548515">RadarConf 2024 paper</a><a href="https://doi.org/10.1117/12.3014010">SPIE 2024 paper</a></span>
+    
+    <figure class="research-media narrow">
+        <video controls playsinline preload="metadata" data-playbtn poster="assets/research/wifi-har-versal.jpg" aria-describedby="wifi-har-video-caption">
+          <source src="assets/research/wifi-har-versal.mp4" type="video/mp4">
+          <a href="assets/research/wifi-har-versal.mp4">Download the video</a>
+        </video>
+        <figcaption id="wifi-har-video-caption"><b>Video.</b> The live room-sensing dashboard from Ajaya Dahal’s implementation of this pipeline on an AMD Versal VCK190, replaying a representative CSI feature stream: an empty room, a person walking in, sitting and breathing, a fall, and stillness. On the board, a Raspberry Pi streams CSI, the programmable logic parses the packets, and the AI Engine computes the spectrogram and the motion, breathing and fall features.</figcaption>
+      </figure>
+  </article>
+      <section class="research-project" aria-labelledby="future-directions">
+        <h2 id="future-directions">Future Directions</h2>
+        <p>I want to understand how well radar models transfer across sensors, datasets, and environments. My next step is to study how differences in recording setups and radar representations affect that transfer, with the longer-term goal of building reusable models that adapt with fewer labeled examples.</p>
+      </section>
+    </div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-name">Sabyasachi Biswas</p>
+      <p>Assistant Professor of Electrical and Computer Engineering<br>Grand Valley State University</p>
+    </div>
+    <div>
+      <p><a href="mailto:biswass@gvsu.edu">biswass@gvsu.edu</a></p>
+      <p>Room 247, John C. Kennedy Hall of Engineering<br>301 West Fulton Street<br>Grand Rapids, MI 49504</p>
+    </div>
+    <div>
+      <ul class="foot-links"><li><a href="https://scholar.google.com/citations?user=SLDhricAAAAJ&hl=en">Google Scholar</a></li><li><a href="https://github.com/Sabyasachi1406147">GitHub</a></li><li><a href="https://www.linkedin.com/in/sabyasachi-biswas-584589117/">LinkedIn</a></li><li><a href="https://www.webofscience.com/wos/author/record/JFA-3339-2023">Web of Science</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot-base"><p>© 2026 Sabyasachi Biswas. Last updated November 2026.</p></div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
